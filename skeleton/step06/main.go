@@ -39,10 +39,13 @@ LOOP: // 以下のループにラベル「LOOP」をつける
 			if err != nil {
 				fmt.Fprintln(os.Stderr, "エラー:", err)
 				// TODO: LOOPという名前のついたforから抜け出す
+				break LOOP
 			}
 			showItems(items)
 		case 3: // 終了
 			// TODO: 3のとき「終了します」と出力して終了する
+			fmt.Print("終了します")
+			break LOOP
 		}
 	}
 }
